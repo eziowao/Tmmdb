@@ -5,7 +5,7 @@
 body {
     font-family: 'Montserrat';
     margin: 2%;
-    background-color: black;
+    background-color: black
 }
 
 #filmsList {
@@ -19,6 +19,12 @@ body {
 img {
     border-radius: 20px;
     margin: 6px;
+    transition: transform 0.3s ease-out;
+
+}
+
+img:hover {
+    transform: scale(1.04);
 }
 
 h1 {
@@ -39,6 +45,7 @@ h2 {
 p {
     width: 300px;
     color: white;
+
 }
 
 .film-info {
@@ -47,4 +54,55 @@ p {
 
 .film-info.active {
     display: block;
+}
+
+div {
+    margin-bottom: 5%;
+}
+
+/* flipper */
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 300px;
+    height: 450px;
+}
+
+.flipper {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.film-info {
+    display: none;
+}
+
+.flip-container .back p {
+    overflow: auto;
+    max-height: 370px;
+}
+
+.manuflix {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0%;
 }
